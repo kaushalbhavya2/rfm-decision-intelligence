@@ -16,11 +16,27 @@ export default function MethodologyPage() {
 
       {/* Dataset Disclosure */}
       <div className="rounded-lg border border-amber-200 bg-amber-50 p-5">
-        <h2 className="text-sm font-semibold text-amber-800 mb-1">Dataset Disclosure</h2>
-        <p className="text-sm text-amber-900 leading-relaxed">
-          This analysis uses the UCI Online Retail dataset — a UK-based gift/novelty wholesaler
-          selling primarily to B2B resellers — as a proxy dataset for methodological demonstration.
-          All strategic recommendations are calibrated for a B2C retail environment.
+        <h2 className="text-sm font-semibold text-amber-800 mb-2">Dataset Disclosure — B2B Context</h2>
+        <p className="text-sm text-amber-900 leading-relaxed mb-3">
+          The UCI Online Retail dataset records wholesale B2B transactions from a UK gift and
+          novelty distributor (December 2010–December 2011). Customer entities are primarily retail
+          businesses purchasing inventory for resale — not individual end consumers. Quantities per
+          line item frequently exceed 100 units; a meaningful number of accounts show lifetime
+          revenue exceeding £20,000 — consistent with wholesale account values, not individual
+          retail spending.
+        </p>
+        <p className="text-sm text-amber-900 leading-relaxed mb-3">
+          All RFM segmentation, CLV modelling, and win-back recommendations are demonstrated on
+          this dataset to illustrate analytical methodology. The strategic recommendations are
+          framed as if applied to a B2C retail environment — the intended deployment context. In a
+          production engagement, the identical techniques would apply to direct consumer transaction
+          data (loyalty programme records, app purchase histories, or CRM exports) from platforms
+          such as Flipkart, Nykaa, or Reliance Retail.
+        </p>
+        <p className="text-sm text-amber-800 font-medium">
+          Win-back response rates of 10–20% assumed in ROI modelling are consumer retail
+          benchmarks. B2B wholesale win-back rates are typically lower (5–12%) but higher in
+          revenue impact per recovered account.
         </p>
       </div>
 
@@ -64,29 +80,74 @@ export default function MethodologyPage() {
 
       {/* Data Preprocessing */}
       <section>
-        <h2 className="text-lg font-semibold text-slate-900 mb-3">Data Preprocessing</h2>
-        <ul className="space-y-2 text-sm text-slate-700">
-          <li className="flex gap-2">
-            <span className="text-slate-400 mt-0.5">—</span>
-            Cancelled orders (negative quantities) removed
-          </li>
-          <li className="flex gap-2">
-            <span className="text-slate-400 mt-0.5">—</span>
-            Null CustomerIDs excluded
-          </li>
-          <li className="flex gap-2">
-            <span className="text-slate-400 mt-0.5">—</span>
-            Duplicate invoice lines deduplicated
-          </li>
-          <li className="flex gap-2">
-            <span className="text-slate-400 mt-0.5">—</span>
-            Analysis period: December 2010 – December 2011 (13 months)
-          </li>
-          <li className="flex gap-2">
-            <span className="text-slate-400 mt-0.5">—</span>
-            Final dataset: 4,338 customers, 392,692 transactions
-          </li>
-        </ul>
+        <h2 className="text-lg font-semibold text-slate-900 mb-3">Data Preprocessing Pipeline</h2>
+        <div className="overflow-x-auto rounded-lg border border-slate-200">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-slate-50 border-b border-slate-200">
+                <th className="text-left px-4 py-3 font-semibold text-slate-700">Step</th>
+                <th className="text-left px-4 py-3 font-semibold text-slate-700">Action</th>
+                <th className="text-left px-4 py-3 font-semibold text-slate-700">Volume</th>
+                <th className="text-left px-4 py-3 font-semibold text-slate-700">Rationale</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {[
+                {
+                  step: "1",
+                  action: "Raw dataset",
+                  volume: "541,909 rows",
+                  rationale: "UCI Online Retail, Dec 2010–Dec 2011",
+                },
+                {
+                  step: "2",
+                  action: "Cancelled order removal",
+                  volume: "~9,685 rows removed",
+                  rationale:
+                    "InvoiceNo prefixed 'C' and Quantity < 0. Not netted against originating orders — slight overstatement of M values for high-return customers.",
+                },
+                {
+                  step: "3",
+                  action: "Null CustomerID removal",
+                  volume: "~135,080 rows removed",
+                  rationale:
+                    "Anonymous guest purchases cannot be attributed. Represent a material revenue share — all aggregate revenue claims in this project are attributed customers only.",
+                },
+                {
+                  step: "4",
+                  action: "Duplicate row removal",
+                  volume: "~5,268 rows removed",
+                  rationale:
+                    "Exact duplicates across all 8 columns; near-duplicates resolved by retaining most complete Description.",
+                },
+                {
+                  step: "5",
+                  action: "UnitPrice anomaly removal",
+                  volume: "~1,456 rows removed",
+                  rationale:
+                    "UnitPrice ≤ 0. Rows with UnitPrice = 0 excluded from monetary calculations but retained for frequency counts.",
+                },
+                {
+                  step: "6",
+                  action: "Final dataset",
+                  volume: "392,692 rows, 4,338 customers",
+                  rationale: "Non-product service codes (POST, DOT) excluded from SKU analysis.",
+                },
+              ].map((row) => (
+                <tr key={row.step} className="hover:bg-slate-50 align-top">
+                  <td className="px-4 py-3 text-slate-400 font-mono text-xs">{row.step}</td>
+                  <td className="px-4 py-3 font-medium text-slate-800">{row.action}</td>
+                  <td className="px-4 py-3 text-slate-700 font-mono text-xs whitespace-nowrap">{row.volume}</td>
+                  <td className="px-4 py-3 text-slate-600 text-xs">{row.rationale}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-slate-400 mt-2">
+          Quantity outliers (e.g. Quantity &gt; 5,000) were retained — consistent with wholesale
+          bulk ordering and critical for accurately representing the highest-value accounts.
+        </p>
       </section>
 
       {/* CLV Regression */}

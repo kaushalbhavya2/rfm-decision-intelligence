@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import NavBar from "@/components/NavBar"
+import { PrototypeBanner } from "@/components/PrototypeBanner"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} min-h-screen bg-slate-50`}>
         <NavBar />
+        <PrototypeBanner />
         {children}
       </body>
     </html>
