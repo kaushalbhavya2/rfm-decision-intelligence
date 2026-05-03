@@ -60,6 +60,9 @@ export default function AuditPage() {
           <p className="text-slate-500 text-sm">
             Complete decision log — all approvals, modifications, and rejections
           </p>
+          <p className="text-slate-400 text-xs mt-1">
+            Prototype: stored in browser localStorage. Production implementation would use an append-only database with hash chaining.
+          </p>
         </div>
         {entries.length > 0 && (
           <Button

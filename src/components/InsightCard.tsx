@@ -118,9 +118,16 @@ function InsightCardInner({ insight }: InsightCardProps) {
           </div>
 
           {/* Action reference ID */}
-          <div className="text-xs text-slate-400 font-mono mb-4">
+          <div className="text-xs text-slate-400 font-mono mb-3">
             {insight.action_reference_id}
           </div>
+
+          {/* SIG-004 model caveat */}
+          {insight.signal_id === "SIG-004" && (
+            <div className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded px-3 py-2 mb-4">
+              Directional signal only — CLV model R²=0.14. Revenue figure reflects predicted CLV, not confirmed revenue. Route to senior analyst before action.
+            </div>
+          )}
 
           {/* Status message */}
           {statusMessage && (

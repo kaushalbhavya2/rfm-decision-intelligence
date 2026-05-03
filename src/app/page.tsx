@@ -53,7 +53,7 @@ export default function HomePage() {
             RFM Decision Intelligence
           </h1>
           <p className="text-slate-600">
-            From segmentation to action — a prototype agentic workflow
+            From segmentation to action — a human-supervised decision intelligence workflow
           </p>
         </div>
       </div>
