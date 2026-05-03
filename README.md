@@ -13,7 +13,7 @@ In 2024, at FoodWorks, I applied manual segmentation and inventory analysis to d
 ## Live Demo
 
 ```
-Live demo: YOUR_VERCEL_URL
+Live demo: https://rfm-decision-intelligence-qq4osu5c7-kaushalbhavya2s-projects.vercel.app
 Tableau dashboards: https://public.tableau.com/app/profile/bhavya.kaushal8300/viz/RFMcustomersegmentation_17777123503690/Dashboard1
 ```
 
