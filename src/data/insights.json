@@ -1,0 +1,62 @@
+[
+  {
+    "signal_id": "SIG-001",
+    "signal_type": "At-Risk Segment Revenue Decline",
+    "segment": "at_risk",
+    "affected_customers": 661,
+    "revenue_at_risk": 823912.4400000001,
+    "metric": "Peak-to-Latest Monthly Revenue",
+    "delta": "-23.1% from peak month to latest month",
+    "severity": "medium",
+    "finding": "The at-risk customer segment (661 customers) has experienced a 23.1% revenue decline from peak to latest month, placing £823,912 in annual revenue at immediate risk. This trajectory indicates accelerating disengagement, likely driven by competitive substitution, unresolved friction points, or lapsed purchase triggers. Without intervention, this cohort is approaching churn threshold.",
+    "recommended_action": "Launch a targeted win-back campaign within 7 days: (1) Identify top 200 highest-value at-risk customers and assign to personalised outreach via account managers or high-touch email sequences with tailored incentives (10-15% loyalty discount or exclusive early access offers). (2) Deploy automated re-engagement flows for remaining 461 customers using last-purchase category affinity. (3) Conduct a 50-customer exit-intent survey to diagnose root causes. (4) Review pricing and assortment gaps versus key competitors flagged in recent market data.",
+    "expected_impact": "Recovering 30-40% of at-risk revenue through targeted re-engagement is achievable within 60-90 days, representing a projected revenue recovery of £247,174 to £329,565. Successful stabilisation of this segment could restore monthly revenue to within 10% of peak levels, with a customer save rate target of 35-45% of the 661 affected accounts.",
+    "cost_of_inaction": "If no action is taken, continued decline at the current 23.1% trajectory projects full churn of this segment within 3-5 months, resulting in total annual revenue loss of up to £823,912. Additionally, lost lifetime value across 661 customers — assuming an average LTV multiplier of 3x — represents a long-term revenue exposure exceeding £2.4M. Reacquisition costs for equivalent new customers would further add £330,000–£660,000 in marketing spend.",
+    "action_reference_id": "ACT-SIG001-ATRISK-WINBACK-2024"
+  },
+  {
+    "signal_id": "SIG-002",
+    "signal_type": "High Value Churn Risk",
+    "segment": "high_value",
+    "affected_customers": 84,
+    "revenue_at_risk": 454817.13,
+    "metric": "Recency Score Deterioration",
+    "delta": "84 customers at lowest recency quartile (r_score=3)",
+    "severity": "high",
+    "finding": "84 high-value customers have dropped to the lowest recency quartile (r_score=3), signalling significant churn risk. This cohort represents £454,817 in revenue at risk. Recency score deterioration at this severity level typically precedes full churn within 60-90 days if no intervention occurs. Immediate re-engagement is critical to preserve lifetime value of this segment.",
+    "recommended_action": "Launch a targeted win-back campaign within 48 hours: (1) Deploy personalised outreach via email and SMS with exclusive high-value loyalty offers (15-20% discount or bonus loyalty points). (2) Assign dedicated account representatives or VIP concierge contact for top 20% of the 84 customers by historical spend. (3) Introduce a time-sensitive incentive (7-14 day expiry) to drive immediate purchase behaviour. (4) Conduct a root-cause survey to identify friction points causing disengagement. (5) Flag these customers in CRM for daily monitoring and escalate non-responders within 7 days.",
+    "expected_impact": "Successful re-engagement of 40-55% of at-risk customers (34-46 customers) is achievable with personalised high-value intervention, recovering approximately £181,927 to £250,149 in at-risk revenue. Long-term, restoring recency scores to r_score=1 or r_score=2 within 30 days can stabilise CLV and reduce segment churn rate by an estimated 25-30%.",
+    "cost_of_inaction": "Failure to act within the next 30 days risks full churn of all 84 customers, resulting in a potential total revenue loss of £454,817 in the near term. Factoring in average customer lifetime value and replacement acquisition costs (typically 5-7x retention cost), the long-term financial exposure could exceed £1.2M to £1.8M. Additionally, high-value churn disproportionately impacts brand reputation and peer referral networks.",
+    "action_reference_id": "ACT-SIG002-HVC-REENG-001"
+  },
+  {
+    "signal_id": "SIG-003",
+    "signal_type": "Promising Segment Graduation Opportunity",
+    "segment": "promising",
+    "affected_customers": 183,
+    "revenue_at_risk": 183074.35000000003,
+    "metric": "Graduation Proximity Rate (f_score≥3 & m_score≥3)",
+    "delta": "38.9% graduation proximity rate (183 of 470 customers)",
+    "severity": "medium",
+    "finding": "183 out of 470 promising segment customers (38.9%) have achieved both frequency scores ≥3 and monetary scores ≥3, placing them at the threshold for graduation to higher-value segments. This cohort represents £183,074 in revenue that is primed for acceleration but risks stagnation without targeted intervention. The graduation proximity rate signals strong behavioural momentum that must be captured before engagement naturally plateaus.",
+    "recommended_action": "Launch a tiered loyalty acceleration campaign targeting all 183 graduation-ready customers within 72 hours. Deploy personalised outreach via email and push notifications featuring exclusive 'VIP Preview' offers, early access to new arrivals, and a time-limited double-points multiplier valid for 21 days. Assign high-value customers (top 20% by monetary score) to a concierge outreach track with dedicated rep follow-up. Simultaneously, configure automated segment graduation triggers to move qualifying customers into the Champions or Loyal Customers segment upon next qualifying purchase.",
+    "expected_impact": "Graduating 40-55% of proximity-ready customers (73-100 customers) to higher-value segments is projected to increase annualised revenue contribution by £62,000–£89,000 through elevated purchase frequency and basket size. Segment graduation historically yields a 25-35% increase in average order value within 90 days post-graduation, and retention rates for graduated customers exceed 78% at the 12-month mark.",
+    "cost_of_inaction": "Without intervention, an estimated 30-40% of these 183 customers (55-73 individuals) will regress in RFM scores within the next 60-90 days, transitioning toward at-risk or hibernating segments. This regression would place approximately £54,900–£73,200 of the £183,074 revenue base in immediate jeopardy, with long-term lifetime value erosion potentially exceeding £210,000 across the cohort over a 24-month horizon.",
+    "action_reference_id": "ACT-SIG003-PROM-GRAD-20240101"
+  },
+  {
+    "signal_id": "SIG-004",
+    "signal_type": "Lost Customers with High Predicted CLV",
+    "segment": "lost",
+    "affected_customers": 80,
+    "revenue_at_risk": 17879523.236615445,
+    "metric": "Predicted CLV vs Segment Expectation",
+    "delta": "80 lost customers above overall P95 predicted CLV (£186,384)",
+    "severity": "high",
+    "finding": "80 lost customers have been identified with predicted CLV exceeding the overall P95 threshold of £186,384, representing a critical high-value segment that has churned. Collectively, these customers place £17,879,523 in revenue at risk. The concentration of such high-CLV profiles within the lost segment suggests a systemic failure in retention touchpoints or competitive displacement at the premium end of the customer base, warranting immediate and targeted intervention.",
+    "recommended_action": "Launch a dedicated high-value win-back programme within 7 days targeting all 80 lost customers. Deploy a tiered re-engagement sequence: (1) personalised outreach via a dedicated account manager or senior CRM specialist with a bespoke reactivation offer (e.g., loyalty credits, exclusive pricing, or VIP early access), (2) conduct exit-reason diagnostics through direct calls or surveys to identify churn drivers, (3) create segment-specific win-back offers calibrated to each customer's historical purchase categories and CLV tier, and (4) establish a 90-day re-engagement monitoring cadence with escalation triggers if no response within 14 days.",
+    "expected_impact": "Reactivating 25–40% of the 80 lost high-CLV customers (20–32 customers) at even 70% of their predicted CLV trajectory could recover between £2,613,440 and £4,181,504 in lifetime revenue. Improved win-back rate benchmarks for high-CLV segments with personalised outreach typically range from 20–35%, with average reactivation revenue recovery of 65–80% of predicted CLV. Additionally, insights from churn diagnostics will reduce future premium-segment attrition by an estimated 10–15%.",
+    "cost_of_inaction": "Failure to act within 30 days significantly reduces win-back probability as customer switching costs solidify with competitors. The full £17,879,523 in predicted CLV remains permanently at risk. Each week of inaction increases competitive entrenchment, reduces offer receptivity, and erodes brand recall among this high-value cohort. At a 90-day inaction mark, industry benchmarks suggest win-back probability drops by over 60%, effectively writing off £10.7M+ in recoverable lifetime value.",
+    "action_reference_id": "ACT-SIG004-WINBACK-HCLV-001"
+  }
+]
