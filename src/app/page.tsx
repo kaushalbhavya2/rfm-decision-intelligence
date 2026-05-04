@@ -116,19 +116,25 @@ export default function HomePage() {
             </p>
           </div>
           <h1 className="text-5xl font-bold tracking-tight text-slate-900 mt-3 max-w-3xl leading-tight">
-            £8.8M in Revenue.<br />661 Customers Walking Out the Door.
+            Finding the problem was never the hard part.
           </h1>
           <p className="text-xl font-medium text-slate-500 mt-5 max-w-2xl leading-snug">
-            The insight existed. The decision did not.
+            I worked at FoodWorks. The hard part was always acting on it before it got worse.
           </p>
           <p className="text-base leading-relaxed text-slate-600 mt-6 max-w-2xl">
-            Most retail analytics projects stop at the insight — the dashboard updates, the slide
-            gets presented, and then the analyst waits to see whether anyone acts. The gap between
-            finding and action is where revenue leaks. This project runs RFM segmentation across
-            4,338 customers, extends to a CLV regression and demand forecast, and ends with an
-            agentic workflow that synthesises the analysis into a structured recommendation, captures
-            the decision in an audit trail, and drafts the first email — before the analyst touches
-            the keyboard.
+            We&apos;d spot a customer segment going quiet, a product running low, something off in
+            the numbers. Flag it, escalate it, wait for approval, figure out the action. By the
+            time anything actually happened, the problem was bigger than when we found it. Not
+            because anyone was careless. Just too many steps between finding and fixing with
+            nothing automated in between.
+          </p>
+          <p className="text-base leading-relaxed text-slate-600 mt-4 max-w-2xl">
+            I wanted to see how much of that lag could be closed. RFM segmentation gave me the
+            starting point, scoring customers on recency, frequency, and spend, turning the data
+            into a priority list rather than just a description. The at-risk group stops being a
+            vague concern and becomes an actual target. From there I built a system where the
+            analysis generates a recommendation automatically and anyone on the team, no data
+            background needed, can approve or reject it in under a minute.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
             {[
@@ -159,41 +165,41 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div className="bg-indigo-900/50 border border-indigo-800 rounded-xl p-6">
               <p className="text-xs font-bold tracking-widest uppercase text-indigo-400 mb-3">
-                Problem
+                The problem I kept seeing
               </p>
               <p className="text-white font-semibold text-base leading-snug mb-2">
-                The insight existed. The decision didn&apos;t.
+                Finding an issue and acting on it were separated by too many steps.
               </p>
               <p className="text-indigo-200 text-sm leading-relaxed">
-                661 At-Risk customers. £88K in historical revenue. Identified by the model.
-                Unsegmented in the CRM. No action taken. The standard analytics stack stops at
-                the dashboard.
+                At FoodWorks, by the time approval came through and someone knew what to do,
+                the situation was already worse than when we first spotted it. That lag is what
+                this project is designed to close.
               </p>
             </div>
             <div className="bg-indigo-900/50 border border-indigo-800 rounded-xl p-6">
               <p className="text-xs font-bold tracking-widest uppercase text-indigo-400 mb-3">
-                Solution
+                What I built
               </p>
               <p className="text-white font-semibold text-base leading-snug mb-2">
-                Analysis → AI synthesis → human decision → audited action.
+                Raw data to recommended action, with a human decision in the middle.
               </p>
               <p className="text-indigo-200 text-sm leading-relaxed">
-                An agentic workflow that detects signals, synthesises structured recommendations
-                via Claude Sonnet, captures the approval decision, and drafts the first CRM email
-                — with a full audit trail at every step.
+                The system detects signals in the data, writes a recommendation automatically,
+                and puts it in front of a person to approve or reject. The decision is logged.
+                An email draft is ready. Nobody has to chase approvals.
               </p>
             </div>
             <div className="bg-indigo-900/50 border border-indigo-800 rounded-xl p-6">
               <p className="text-xs font-bold tracking-widest uppercase text-indigo-400 mb-3">
-                Enterprise Relevance
+                Why it matters beyond this dataset
               </p>
               <p className="text-white font-semibold text-base leading-snug mb-2">
-                Built for Indian retail at scale.
+                The same gap exists in any retail business with loyalty data.
               </p>
               <p className="text-indigo-200 text-sm leading-relaxed">
-                DMart, Reliance Retail, Nykaa, Flipkart — any loyalty programme with transaction
-                data can run this pipeline. The architecture is production-extensible. The
-                methodology is validated on real transaction data.
+                The method works on DMart&apos;s 350 stores as cleanly as it works on the
+                4,338 customers here. The dataset is a UK wholesaler. The problem it models
+                is Indian retail.
               </p>
             </div>
           </div>
@@ -404,15 +410,15 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="bg-white border-l-4 border-indigo-600 rounded-r-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
             <p className="text-xs font-semibold tracking-widest uppercase text-indigo-600 mb-4">
-              The Strategic Gap
+              So what&apos;s the actual problem?
             </p>
             <p className="text-lg leading-relaxed text-slate-700 font-medium">
-              The analysis above is not the bottleneck. Every retail business with a loyalty
-              programme has this data. The bottleneck is the path from model output to operational
-              decision — the two to five days between an analyst completing a segmentation run and
-              a campaign being drafted. In that window, lapsed customers move further away, At-Risk
-              accounts churn, and reorder windows close. The prototype below is built to close that
-              gap without removing the human from the decision.
+              The analysis above is the easy part. Any retailer with a loyalty programme has this
+              data sitting somewhere. The problem is what happens next. Between running the model
+              and actually doing something about it, there are usually a few days of emails,
+              approvals, and handoffs. In that window the at-risk customers get more at-risk. The
+              products running low get lower. The issue you caught on Monday is a bigger issue by
+              Friday. That&apos;s what the prototype below is built to address.
             </p>
           </div>
         </div>
@@ -435,14 +441,15 @@ export default function HomePage() {
             Decision Intelligence Workflow
           </h2>
           <p className="text-slate-400 text-base mt-3 max-w-2xl leading-relaxed">
-            Four signals detected automatically from 4,338 customer records. Claude Sonnet
-            synthesised each into a structured recommendation with finding, expected impact, and
-            cost of inaction. Approve, modify, or reject each below — your decision is logged to
-            the{" "}
+            The analysis found four things worth acting on. Rather than write each one up as a
+            report and wait for someone to read it, I had Claude Sonnet turn each finding into a
+            recommendation with a clear action, an expected impact, and what it costs to do
+            nothing. Your job here is just to decide. Approve it, adjust the wording, or reject
+            it. Whatever you choose gets logged to the{" "}
             <Link href="/audit" className="text-slate-300 underline hover:text-white">
               audit trail
             </Link>
-            .
+            {" "}with a reference ID.
           </p>
 
           {/* Insight cards — 2×2 grid */}
@@ -808,8 +815,9 @@ export default function HomePage() {
             Why This Matters for Accenture Clients
           </h2>
           <p className="text-slate-500 text-sm mb-10 max-w-2xl">
-            India&apos;s organised retail sector is data-rich and decision-poor. The gap this
-            prototype addresses is endemic across Accenture&apos;s FMCG, retail, and CPG client base.
+            Most retail clients in India have loyalty programmes with years of transaction data.
+            What they don&apos;t have is a clear path from that data to a timely decision. This
+            problem shows up consistently across retail, FMCG, and CPG.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
@@ -914,9 +922,11 @@ export default function HomePage() {
 
           {/* Closing line */}
           <div className="border-t border-slate-800 mt-12 pt-8">
-            <p className="text-sm text-slate-500 italic max-w-2xl">
-              &ldquo;The gap between analytical insight and operational action is where most of the
-              value is left on the table. This project is the infrastructure for closing it.&rdquo;
+            <p className="text-sm text-slate-400 max-w-2xl leading-relaxed">
+              I built this because a real problem frustrated me at a real job. The dataset is from
+              a UK retailer, but the problem it models exists in Indian retail at the same scale.
+              If you&apos;re working with clients who have this gap, I&apos;d like to talk about
+              how to close it.
             </p>
           </div>
         </div>
