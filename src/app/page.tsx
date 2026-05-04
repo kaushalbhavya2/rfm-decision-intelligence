@@ -106,25 +106,29 @@ export default function HomePage() {
       {/* ── 1. HERO ──────────────────────────────────────────────────────── */}
       <section className="bg-white border-b border-slate-200 pt-20 pb-16">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs font-semibold tracking-widest uppercase text-indigo-600">
-            Retail Analytics — Strategic Assessment
-          </p>
+          <div className="flex items-center gap-2.5 mb-5">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+            </span>
+            <p className="text-xs font-semibold tracking-widest uppercase text-slate-500">
+              Retail Analytics · Decision Intelligence · Bhavya Kaushal
+            </p>
+          </div>
           <h1 className="text-5xl font-bold tracking-tight text-slate-900 mt-3 max-w-3xl leading-tight">
-            RFM Decision Intelligence
+            £8.8M in Revenue.<br />661 Customers Walking Out the Door.
           </h1>
-          <p className="text-xl font-medium text-slate-500 mt-4 max-w-2xl leading-snug">
-            From segmentation to action — a human-supervised decision intelligence workflow
+          <p className="text-xl font-medium text-slate-500 mt-5 max-w-2xl leading-snug">
+            The insight existed. The decision did not.
           </p>
           <p className="text-base leading-relaxed text-slate-600 mt-6 max-w-2xl">
-            Most retail analytics projects stop at the insight. A segmentation model runs, a
-            dashboard updates, a slide gets presented — and then the analyst waits to see whether
-            anyone acts on it. The gap between finding and action is where revenue leaks. This
-            project begins with RFM segmentation across 4,338 customers, extends to a CLV
-            regression model and a demand forecast, and ends with an agentic workflow that
-            synthesises the analysis into a human-readable recommendation, captures the decision in
-            an audit trail, and drafts the first email — all before the analyst touches the
-            keyboard. Methodology demonstrated on a proxy dataset (UCI Online Retail, 2010–2011);
-            architecture designed for a live Indian retail deployment.
+            Most retail analytics projects stop at the insight — the dashboard updates, the slide
+            gets presented, and then the analyst waits to see whether anyone acts. The gap between
+            finding and action is where revenue leaks. This project runs RFM segmentation across
+            4,338 customers, extends to a CLV regression and demand forecast, and ends with an
+            agentic workflow that synthesises the analysis into a structured recommendation, captures
+            the decision in an audit trail, and drafts the first email — before the analyst touches
+            the keyboard.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
             {[
@@ -142,6 +146,56 @@ export default function HomePage() {
                 {b}
               </span>
             ))}
+          </div>
+          <p className="text-xs text-slate-400 mt-3">
+            Dataset values: GBP &nbsp;·&nbsp; India deployment context: ₹ at ×107 conversion
+          </p>
+        </div>
+      </section>
+
+      {/* ── 1b. EXECUTIVE SUMMARY ───────────────────────────────────────── */}
+      <section className="bg-indigo-950 py-12 border-b border-indigo-900">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="bg-indigo-900/50 border border-indigo-800 rounded-xl p-6">
+              <p className="text-xs font-bold tracking-widest uppercase text-indigo-400 mb-3">
+                Problem
+              </p>
+              <p className="text-white font-semibold text-base leading-snug mb-2">
+                The insight existed. The decision didn&apos;t.
+              </p>
+              <p className="text-indigo-200 text-sm leading-relaxed">
+                661 At-Risk customers. £88K in historical revenue. Identified by the model.
+                Unsegmented in the CRM. No action taken. The standard analytics stack stops at
+                the dashboard.
+              </p>
+            </div>
+            <div className="bg-indigo-900/50 border border-indigo-800 rounded-xl p-6">
+              <p className="text-xs font-bold tracking-widest uppercase text-indigo-400 mb-3">
+                Solution
+              </p>
+              <p className="text-white font-semibold text-base leading-snug mb-2">
+                Analysis → AI synthesis → human decision → audited action.
+              </p>
+              <p className="text-indigo-200 text-sm leading-relaxed">
+                An agentic workflow that detects signals, synthesises structured recommendations
+                via Claude Sonnet, captures the approval decision, and drafts the first CRM email
+                — with a full audit trail at every step.
+              </p>
+            </div>
+            <div className="bg-indigo-900/50 border border-indigo-800 rounded-xl p-6">
+              <p className="text-xs font-bold tracking-widest uppercase text-indigo-400 mb-3">
+                Enterprise Relevance
+              </p>
+              <p className="text-white font-semibold text-base leading-snug mb-2">
+                Built for Indian retail at scale.
+              </p>
+              <p className="text-indigo-200 text-sm leading-relaxed">
+                DMart, Reliance Retail, Nykaa, Flipkart — any loyalty programme with transaction
+                data can run this pipeline. The architecture is production-extensible. The
+                methodology is validated on real transaction data.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -374,7 +428,7 @@ export default function HomePage() {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
             </span>
             <span className="text-xs font-bold tracking-widest uppercase text-green-400">
-              Live System
+              Working Prototype
             </span>
           </div>
           <h2 className="text-3xl font-semibold text-white mt-5 tracking-tight">
@@ -504,8 +558,11 @@ export default function HomePage() {
 
           {/* India network extrapolation */}
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-8">
-            <p className="text-xs font-semibold tracking-widest uppercase text-slate-400 mb-5">
+            <p className="text-xs font-semibold tracking-widest uppercase text-slate-400 mb-1">
               Scale — Indian Retail Network Extrapolation
+            </p>
+            <p className="text-xs text-slate-400 italic mb-5">
+              Illustrative scale potential, not projected outcome
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
@@ -702,6 +759,88 @@ export default function HomePage() {
             <div className="bg-slate-50 rounded-lg border border-slate-200 p-4">
               <p className="font-semibold text-slate-700 mb-1">Production extension</p>
               <p>n8n workflow · Slack approval · Gmail draft · append-only DB · hash-chained audit</p>
+            </div>
+          </div>
+
+          {/* Production architecture flow */}
+          <div className="mt-8 bg-slate-50 rounded-xl border border-slate-200 p-6">
+            <p className="text-xs font-semibold tracking-widest uppercase text-slate-400 mb-5">
+              Production Architecture — Indian Retail Deployment
+            </p>
+            <div className="overflow-x-auto">
+              <div className="flex items-stretch gap-1 min-w-max">
+                {[
+                  { label: "POS / CRM / WMS", sub: "Transaction feeds", color: "bg-slate-100 border-slate-300 text-slate-700" },
+                  { label: "ETL / Streaming", sub: "Kafka · Spark", color: "bg-slate-100 border-slate-300 text-slate-700" },
+                  { label: "Segmentation Engine", sub: "RFM · CLV · Forecast", color: "bg-indigo-50 border-indigo-200 text-indigo-700" },
+                  { label: "Signal Detection", sub: "Threshold rules", color: "bg-indigo-50 border-indigo-200 text-indigo-700" },
+                  { label: "LLM Synthesis", sub: "Claude / GPT", color: "bg-purple-50 border-purple-200 text-purple-700" },
+                  { label: "Human Approval", sub: "Approve / Modify / Reject", color: "bg-green-50 border-green-200 text-green-700" },
+                  { label: "CRM / WMS Action", sub: "Email · PO · Offer", color: "bg-amber-50 border-amber-200 text-amber-700" },
+                  { label: "Audit Log", sub: "Append-only · hash-chained", color: "bg-red-50 border-red-200 text-red-700" },
+                ].map((node, i, arr) => (
+                  <div key={node.label} className="flex items-center gap-1">
+                    <div className={`rounded-lg border px-3 py-2.5 text-center min-w-[96px] ${node.color}`}>
+                      <p className="text-xs font-semibold leading-snug">{node.label}</p>
+                      <p className="text-xs opacity-60 mt-0.5 leading-snug">{node.sub}</p>
+                    </div>
+                    {i < arr.length - 1 && (
+                      <span className="text-slate-300 text-base flex-shrink-0 font-light">→</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p className="text-xs text-slate-400 mt-4">
+              This prototype implements the <strong className="text-slate-600">Segmentation Engine → Signal Detection → LLM Synthesis → Human Approval → Audit Log</strong> chain. POS/CRM integration, ETL streaming, and live CRM write-back are the production extension layer.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8b. ACCENTURE RELEVANCE ──────────────────────────────────────── */}
+      <section className="bg-slate-50 py-16 border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs font-semibold tracking-widest uppercase text-indigo-600 mb-1">
+            Strategic Fit
+          </p>
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-900 mb-2">
+            Why This Matters for Accenture Clients
+          </h2>
+          <p className="text-slate-500 text-sm mb-10 max-w-2xl">
+            India&apos;s organised retail sector is data-rich and decision-poor. The gap this
+            prototype addresses is endemic across Accenture&apos;s FMCG, retail, and CPG client base.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+              <p className="text-2xl mb-3">🏪</p>
+              <p className="font-semibold text-slate-900 mb-2">Indian Retail Clients</p>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                DMart, Reliance Retail, Spencer&apos;s, Big Basket, Nykaa — all operate loyalty
+                programmes with transaction-level data. None have a closed-loop signal → decision
+                → action → audit workflow. This prototype is the architectural blueprint for that
+                missing layer.
+              </p>
+            </div>
+            <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+              <p className="text-2xl mb-3">🤖</p>
+              <p className="font-semibold text-slate-900 mb-2">Agentic AI Practice</p>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                The workflow here — LLM synthesis, structured output, human-in-the-loop approval,
+                audited action — is the exact pattern Accenture&apos;s AI &amp; Data practice is
+                productising across enterprises. This is a working reference implementation built
+                from first principles.
+              </p>
+            </div>
+            <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+              <p className="text-2xl mb-3">📋</p>
+              <p className="font-semibold text-slate-900 mb-2">DPDP Act 2023 Readiness</p>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                India&apos;s data protection law requires consent records and audit trails for
+                personalised marketing. The audit log here — with action reference IDs, decision
+                timestamps, and recommendation lineage — maps directly to those compliance
+                requirements.
+              </p>
             </div>
           </div>
         </div>

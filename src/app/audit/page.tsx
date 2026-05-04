@@ -78,9 +78,15 @@ export default function AuditPage() {
 
       {entries.length === 0 ? (
         <div className="bg-white rounded-lg border border-slate-200 p-12 text-center">
-          <p className="text-slate-500 text-sm">
-            No decisions recorded yet. Review the insight feed to approve, modify, or reject
-            recommendations.
+          <p className="text-slate-400 text-3xl mb-4">🗂</p>
+          <p className="text-slate-700 font-semibold text-base mb-2">No decisions recorded yet.</p>
+          <p className="text-slate-500 text-sm max-w-md mx-auto leading-relaxed">
+            Make a decision on any insight card on the{" "}
+            <a href="/" className="text-indigo-600 underline hover:text-indigo-800">
+              home page
+            </a>{" "}
+            — approve, modify, or reject a recommendation and it will appear here with a full
+            audit entry.
           </p>
         </div>
       ) : (
